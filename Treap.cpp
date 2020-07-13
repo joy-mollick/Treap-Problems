@@ -98,5 +98,11 @@ void erase(pnode &t,int key){
     upd_sz(t);
 }
     
-
+/// finding kth value in treap
+int find_kth(pnode t, int val)
+{
+    if(sz(t->l)+1==val) return t->val;
+    if(sz(t->l)>=val) return find_kth(t->l,val);
+    else return find_kth(t->r,val-sz(t->l)-1);
+}
 
