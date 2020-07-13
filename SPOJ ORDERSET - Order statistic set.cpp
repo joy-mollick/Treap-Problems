@@ -1,4 +1,5 @@
-/// Time-360ms
+/// Time-1350ms
+/// Basic Treap Problem , no need to use implicit treap
 
 #include<bits/stdc++.h>
 
