@@ -122,5 +122,13 @@ int find_kth(pnode t, int val)
     else return find_kth(t->r,val-sz(t->l)-1);
 }
 
-
+/// return number of elements smaller or equal than x
+int sma_and_equa(pnode t,int x)
+{
+    pnode l,r;
+    split(root,l,r,x);
+    ///nw->number of elements equal or smaller than x
+    int nw=sz(l);
+    return nw;
+}
 
