@@ -98,7 +98,7 @@ void erase(pnode &t,int key){
     upd_sz(t);
 }
 
-/// index finding of a value
+/// index finding of a value,it will return (zero base index)
 int rank_of(pnode t, int val) {
   int rank = 0;
   while (t) {
@@ -121,4 +121,6 @@ int find_kth(pnode t, int val)
     if(sz(t->l)>=val) return find_kth(t->l,val);
     else return find_kth(t->r,val-sz(t->l)-1);
 }
+
+
 
