@@ -97,6 +97,22 @@ void erase(pnode &t,int key){
     else erase(t->val<key?t->r:t->l,key);
     upd_sz(t);
 }
+
+/// index finding of a value
+int rank_of(pnode t, int val) {
+  int rank = 0;
+  while (t) {
+    if (val < t->val) // move to left subtree
+      t = t->l;
+    else if (val > t->val) {
+      rank += 1 + sz(t->l);
+      t = t->r;
+    }
+    else
+      return rank + sz(t->l);
+  }
+  return -1; // not found
+}
     
 /// finding kth value in treap
 int find_kth(pnode t, int val)
